@@ -207,15 +207,13 @@ body::before {
 }
 
 
-@media (max-width: 768px) {
 
-  
-}
 
 /* hero section css */
 
 .hero-wrapper {
   width: 100%;
+  border-bottom: 3px solid #16140F;
 }
 
 
@@ -439,6 +437,49 @@ body::before {
 }
 
 
+/* projects section */
+
+.project-section{
+  padding-top: 40px;
+  width: 100%;
+  height: 100vh;
+}
+
+.project-section .ps-top-wrapper{
+  width: 85%;
+  margin: auto;
+}
+
+.project-section .ps-top-wrapper .project-p-line{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-family: "Libre Franklin", sans-serif;
+  letter-spacing: 1px;
+}
+
+.project-section .ps-top-wrapper .project-p-line p:nth-child(1) {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.project-section .ps-top-wrapper .project-p-line p:nth-child(2) {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #45413A;
+}
+
+.project-section .ps-top-wrapper .project-h-line{
+  border-bottom: 3px solid #16140F;
+}
+
+.project-section .ps-top-wrapper .project-h-line h1{
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+
 
 
 
@@ -626,6 +667,30 @@ body::before {
 
 
   /* further code  */
+
+  .project-section .ps-top-wrapper{
+  width: 90%;
+
+}
+
+  .project-section .ps-top-wrapper .project-p-line{
+    letter-spacing: 0px;
+  }
+
+ .project-section .ps-top-wrapper .project-p-line p:nth-child(1) {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.project-section .ps-top-wrapper .project-p-line p:nth-child(2) {
+  font-size: 0.7rem;
+  font-weight: 500;
+ }
+
+ .project-section .ps-top-wrapper .project-h-line h1{
+  font-weight: 500;
+  font-size: 2rem;
+}
 
 }
 

@@ -108,7 +108,6 @@ body::before {
 }
 
 .navbar {
-  border-bottom: 2px solid #16140F;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -120,13 +119,9 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0px;
+  padding: 10px 0;
   width: 85%;
   margin: auto;
-}
-
-.navbar .nav-content .menu {
-  display: none;
 }
 
 .navbar .nav-content .logo h1 {
@@ -152,7 +147,9 @@ body::before {
   font-weight: 600;
 }
 
-.navbar .nav-content .nav-links .hire-him {
+/* Hire Him */
+.navbar .nav-content .nav-links .hire-him,
+.mobile-menu .hire-him {
   color: #F1EFE7;
   background: #16140F;
   padding: 8px 15px;
@@ -161,15 +158,16 @@ body::before {
   transition: 0.3s;
 }
 
-.navbar .nav-content .nav-links .hire-him:hover {
-  border: 2px solid #16140F;
+.navbar .nav-content .nav-links .hire-him:hover,
+.mobile-menu .hire-him:hover {
+  border-color: #16140F;
   background-color: #F1EFE7;
   color: #16140F;
 }
 
+/* Normal link underline */
 .navbar .nav-content .nav-links a:not(.hire-him) {
   position: relative;
-  text-decoration: none;
 }
 
 .navbar .nav-content .nav-links a:not(.hire-him)::after {
@@ -185,6 +183,33 @@ body::before {
 
 .navbar .nav-content .nav-links a:not(.hire-him):hover::after {
   width: 100%;
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.navbar .nav-content .menu {
+  display: none;
+  border: none;
+  background: transparent;
+  color: #16140F;
+  font-size: 1.5rem;
+  padding: 5px;
+  cursor: pointer;
+}
+
+
+/* Mobile dropdown */
+.mobile-menu {
+  display: none;
+}
+
+
+@media (max-width: 768px) {
+
+  
 }
 
 /* hero section css */
@@ -420,6 +445,69 @@ body::before {
 
 @media (max-width: 768px) {
 
+  .navbar .nav-content {
+    width: 90%;
+    padding: 12px 0;
+  }
+
+  .navbar .nav-content .logo h1 {
+    font-size: 1.3rem;
+  }
+
+  /* Hide desktop links */
+  .navbar .nav-content .nav-links {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .navbar .nav-content .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 90%;
+    margin: auto;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.35s ease;
+  }
+
+  .mobile-menu.open {
+    max-height: 400px;
+    padding-bottom: 15px;
+  }
+
+  .mobile-menu a {
+    color: #16140F;
+    text-decoration: none;
+    font-family: "Libre Franklin", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    padding: 14px 0;
+    border-bottom: 1px solid #b8b5ac;
+  }
+
+  .mobile-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-menu .hire-him {
+    margin-top: 10px;
+    text-align: center;
+    border: 2px solid #16140F;
+  }
+
   .top-header {
     width: 90%;
   }
@@ -544,6 +632,9 @@ body::before {
 
 
 @media (min-width: 769px) and (max-width: 1024px) {
+
+
+  
 
   .top-header {
     width: 92%;

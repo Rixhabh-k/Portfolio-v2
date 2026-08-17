@@ -1,4 +1,5 @@
-import projectImg from "../assets/image.png"
+
+import ProjectCard from "./ProjectCard";
 
 const ProjectsSection = () => {
   return (
@@ -13,6 +14,12 @@ const ProjectsSection = () => {
         </div>
 
        
+      </div>
+
+      <div className="projects-card-wrapper">
+        <div className="pc-top">
+          <ProjectCard/>
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 
+import CaseFileCard from "./Casefilecard ";
 import ProjectCard from "./ProjectCard";
 
 const ProjectsSection = () => {
@@ -19,6 +20,11 @@ const ProjectsSection = () => {
       <div className="projects-card-wrapper">
         <div className="pc-top">
           <ProjectCard/>
+        </div>
+        <div className="pc-bottom">
+          <CaseFileCard/>
+          <CaseFileCard/>
+          <CaseFileCard/>
         </div>
       </div>
     </div>

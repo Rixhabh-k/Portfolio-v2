@@ -259,7 +259,7 @@ body::before {
   text-transform: uppercase;
 }
 
-.hero-left h1{
+.hero-left h1 {
   font-family: "Libre Caslon Display", serif;
   font-size: 4rem;
   font-weight: 400;
@@ -268,7 +268,7 @@ body::before {
   line-height: 70px;
 }
 
-.hero-left h1 span{
+.hero-left h1 span {
   font-style: italic;
 }
 
@@ -281,7 +281,7 @@ body::before {
 
 .intro-text p {
   margin: 0;
- font-family: "Libre Caslon Display", serif;
+  font-family: "Libre Caslon Display", serif;
   font-size: clamp(20px, 2vw, 28px);
   line-height: 1.25;
   font-style: italic;
@@ -290,13 +290,13 @@ body::before {
   max-width: 80%;
 }
 
-.hero-left .small-info p{
-   font-family: "Libre Franklin", sans-serif;
-   font-size: 0.8rem;
-   text-transform: uppercase;
+.hero-left .small-info p {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
-.hero-left .small-info p span{
+.hero-left .small-info p span {
   font-weight: 700;
 }
 
@@ -342,13 +342,13 @@ body::before {
 
 .hero-left .hero-stats {
   display: grid;
-  
+
   grid-template-columns: repeat(4, 1fr);
   border-top: 2px solid #16140F;
   border-bottom: 2px solid #16140F;
   margin-top: 20px;
 
- 
+
 
 }
 
@@ -398,13 +398,13 @@ body::before {
   display: block;
 }
 
-.hero-right .image-title p{
+.hero-right .image-title p {
   margin-top: 5px;
   font-family: "Libre Franklin", sans-serif;
   font-size: 0.8rem;
 }
 
-.hero-right .image-title p span{
+.hero-right .image-title p span {
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 1px;
@@ -439,18 +439,18 @@ body::before {
 
 /* projects section */
 
-.project-section{
+.project-section {
   padding-top: 40px;
   width: 100%;
   height: 100vh;
 }
 
-.project-section .ps-top-wrapper{
+.project-section .ps-top-wrapper {
   width: 85%;
   margin: auto;
 }
 
-.project-section .ps-top-wrapper .project-p-line{
+.project-section .ps-top-wrapper .project-p-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -463,17 +463,18 @@ body::before {
   font-size: 0.8rem;
   font-weight: 700;
 }
+
 .project-section .ps-top-wrapper .project-p-line p:nth-child(2) {
   font-size: 0.8rem;
   font-weight: 500;
   color: #45413A;
 }
 
-.project-section .ps-top-wrapper .project-h-line{
+.project-section .ps-top-wrapper .project-h-line {
   border-bottom: 3px solid #16140F;
 }
 
-.project-section .ps-top-wrapper .project-h-line h1{
+.project-section .ps-top-wrapper .project-h-line h1 {
   font-family: "Libre Caslon Display", serif;
   font-weight: 500;
   font-size: 2.5rem;
@@ -481,14 +482,14 @@ body::before {
 
 /* projects cards */
 
-.projects-card-wrapper{
+.projects-card-wrapper {
   /* background: #373333; */
   width: 85%;
   margin: auto;
   padding-top: 20px;
 }
 
-.main-card-wrapper{
+.main-card-wrapper {
   width: 100%;
   transition: 0.3s;
   /* height: 50vh; */
@@ -496,14 +497,14 @@ body::before {
   display: flex;
   gap: 20px;
   border-bottom: 1px solid #16140F;
-  
+
 }
 
-.main-card-wrapper:hover{
+.main-card-wrapper:hover {
   background: #EFEADD;
 }
 
-.main-card-wrapper .card-image{
+.main-card-wrapper .card-image {
   width: 45%;
   /* background: #0e409c6b; */
   height: 50vh;
@@ -514,18 +515,21 @@ body::before {
 
 
 
-.card-main-container{
+.card-main-container {
   width: 100%;
   background-color: #FBFAF5;
   height: 47vh;
   display: flex;
   flex-direction: column;
-  align-items: center;      /* horizontal centering ab yahi karega */
-  justify-content: flex-start; /* image ko top ke paas rakhega */
+  align-items: center;
+  /* horizontal centering ab yahi karega */
+  justify-content: flex-start;
+  /* image ko top ke paas rakhega */
   position: relative;
+  border: 1px solid #C1C0BB;
 }
 
-.card-main-container .card-tape{
+.card-main-container .card-tape {
   height: 15px;
   width: 50px;
   background-color: #E7E1D0;
@@ -534,34 +538,35 @@ body::before {
   position: absolute;
   top: -1%;
   left: 50%;
-  transform: translate(-50%) rotate(-5deg);  /* left/transform explicitly diya, ab flex par depend nahi karega */
+  transform: translate(-50%) rotate(-5deg);
+  /* left/transform explicitly diya, ab flex par depend nahi karega */
   z-index: 1;
 }
 
-.card-main-container .card-img-container{
+.card-main-container .card-img-container {
   margin-top: 10px;
   border: 1px solid #373333;
   width: 95%;
   height: 90%;
 }
 
-.card-main-container .card-img-container img{
+.card-main-container .card-img-container img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   filter: grayscale(100%);
 }
 
-.card-img-content{
+.card-img-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   /* gap: 5px; */
   width: 90%;
 }
 
-.card-img-content p{
+.card-img-content p {
   text-transform: uppercase;
   font-family: "Libre Franklin", sans-serif;
   font-size: 0.7rem;
@@ -571,14 +576,14 @@ body::before {
   border-radius: 50%;
 }
 
-.card-img-content a{
+.card-img-content a {
   text-decoration: none;
   color: #45413A;
   font-family: "Libre Franklin", sans-serif;
-   font-size: 0.75rem;
+  font-size: 0.75rem;
 }
 
-.main-card-wrapper .card-content{
+.main-card-wrapper .card-content {
   width: 55%;
   /* background: #0e9c3b6b; */
   height: 50vh;
@@ -586,7 +591,7 @@ body::before {
   align-items: center;
 }
 
-.main-card-wrapper .card-content .card-content-top{
+.main-card-wrapper .card-content .card-content-top {
   display: flex;
   height: 47vh;
   flex-direction: column;
@@ -613,7 +618,7 @@ body::before {
   letter-spacing: 1px;
 }
 
-.main-card-wrapper .card-content .card-content-top h2{
+.main-card-wrapper .card-content .card-content-top h2 {
   text-transform: uppercase;
   font-family: "Libre Caslon Display", serif;
   font-size: 2rem;
@@ -626,26 +631,26 @@ body::before {
   color: #373333;
 }
 
-.card-content-tech-stack{
+.card-content-tech-stack {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
 }
 
-.card-content-tech-stack span{
-    font-family: Consolas, "Andale Mono", "Lucida Console", "Courier New", monospace;
+.card-content-tech-stack span {
+  font-family: Consolas, "Andale Mono", "Lucida Console", "Courier New", monospace;
   font-size: 0.8rem;
   border: 1px solid #16140F;
   padding: 5px 10px;
 }
 
-.card-content-open{
+.card-content-open {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.card-content-open a{
+.card-content-open a {
   text-decoration: none;
   font-family: "Libre Franklin", sans-serif;
   font-size: 0.8rem;
@@ -653,6 +658,164 @@ body::before {
   color: #A6382C;
   text-decoration: underline;
 }
+
+/* case card start */
+
+.pc-bottom {
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.casefile-card {
+  width: 100%;
+  max-width: 31%;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+}
+
+.casefile-card:hover {
+  background: #EFEADD;
+}
+
+.casefile-label {
+  text-transform: uppercase;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #A6382C;
+  letter-spacing: 1.5px;
+}
+
+.casefile-client {
+  text-transform: uppercase;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #16140F;
+  letter-spacing: 1.5px;
+}
+
+.casefile-title {
+  text-transform: uppercase;
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 4px 0 10px;
+}
+
+.casefile-media {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F1EEE3;
+  border: 1px solid #C1C0BB;
+  padding-top: 14px;
+  padding-bottom: 10px;
+}
+
+.casefile-tape {
+  height: 14px;
+  width: 46px;
+  background-color: #E7E1D0;
+  border: 1px solid #dcc588;
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translate(-50%) rotate(-5deg);
+  z-index: 1;
+}
+
+.casefile-media-frame {
+  width: 92%;
+  border: 1px solid #373333;
+}
+
+.casefile-media-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+.casefile-media-tags {
+  width: 92%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.casefile-exhibit-tag {
+  text-transform: uppercase;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  border: 1px solid red;
+  padding: 0px 5px 0px 0px;
+  border-radius: 50%;
+}
+
+.casefile-recovered {
+  text-decoration: none;
+  color: #45413A;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.75rem;
+}
+
+.casefile-description {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1.2rem;
+  color: #373333;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.casefile-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 12px;
+  margin-top: 10px;
+}
+
+.casefile-tech-stack span {
+  font-family: Consolas, "Andale Mono", "Lucida Console", "Courier New", monospace;
+  font-size: 0.7rem;
+  border: 1px solid #16140F;
+  padding: 4px 10px;
+}
+
+.casefile-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid #37333384;
+}
+
+.casefile-year {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #A6382C;
+  font-weight: 700;
+}
+
+.casefile-open-link {
+  text-decoration: none;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #A6382C;
+  text-decoration: underline;
+}
+
+/* case card end */
 
 
 
@@ -773,44 +936,44 @@ body::before {
     letter-spacing: 0px;
   }
 
-  .hero-content-wrapper{
+  .hero-content-wrapper {
     width: 90%;
     flex-direction: column;
   }
 
-  .hero-left{
+  .hero-left {
     width: 100%;
   }
 
-  .hero-left p{
+  .hero-left p {
     letter-spacing: 0px;
     font-size: 0.8rem;
   }
 
-  .hero-left h1{
+  .hero-left h1 {
     max-width: 100%;
     font-size: 2.2rem;
     line-height: 45px;
   }
 
-  .intro-text{
+  .intro-text {
     border-left: 2px solid #16140F;
     padding-left: 8px;
   }
 
-  .intro-text p{
+  .intro-text p {
     font-size: 1.2rem;
     font-weight: 500;
   }
 
-  .hero-left .action-btns button:nth-child(1){
-     padding: 10px 20px;
-      font-size: 1rem;
+  .hero-left .action-btns button:nth-child(1) {
+    padding: 10px 20px;
+    font-size: 1rem;
   }
 
-  .hero-left .action-btns button:nth-child(2){
-     padding: 10px 20px;
-      font-size: 1rem;
+  .hero-left .action-btns button:nth-child(2) {
+    padding: 10px 20px;
+    font-size: 1rem;
   }
 
   .hero-left .hero-stats {
@@ -833,42 +996,42 @@ body::before {
     border-bottom: 1px solid #b8b5ac;
   }
 
-  .hero-right{
+  .hero-right {
     width: 100%;
   }
 
 
   /* further code  */
 
-  .project-section .ps-top-wrapper{
-  width: 90%;
+  .project-section .ps-top-wrapper {
+    width: 90%;
 
-}
+  }
 
-  .project-section .ps-top-wrapper .project-p-line{
+  .project-section .ps-top-wrapper .project-p-line {
     letter-spacing: 0px;
   }
 
- .project-section .ps-top-wrapper .project-p-line p:nth-child(1) {
-  font-size: 0.7rem;
-  font-weight: 700;
-}
+  .project-section .ps-top-wrapper .project-p-line p:nth-child(1) {
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
 
-.project-section .ps-top-wrapper .project-p-line p:nth-child(2) {
-  font-size: 0.7rem;
-  font-weight: 500;
- }
+  .project-section .ps-top-wrapper .project-p-line p:nth-child(2) {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
 
- .project-section .ps-top-wrapper .project-h-line h1{
-  font-weight: 500;
-  font-size: 2rem;
-}
+  .project-section .ps-top-wrapper .project-h-line h1 {
+    font-weight: 500;
+    font-size: 2rem;
+  }
 
-.projects-card-wrapper{
-  width: 90%;
-}
+  .projects-card-wrapper {
+    width: 90%;
+  }
 
-.main-card-wrapper {
+  .main-card-wrapper {
     flex-direction: column;
     gap: 15px;
 
@@ -896,11 +1059,11 @@ body::before {
     object-fit: cover;
   }
 
-  .main-card-wrapper:hover{
-  background: transparent;
-}
+  .main-card-wrapper:hover {
+    background: transparent;
+  }
 
-  .card-img-content{
+  .card-img-content {
     margin-top: 3px;
   }
 
@@ -914,6 +1077,20 @@ body::before {
     padding-bottom: 5px;
   }
 
+  .pc-bottom {
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .casefile-card {
+    width: 100%;
+    max-width: 100%;
+    border-bottom: 1px solid #373333;
+    padding-bottom: 10px;
+  }
+
 }
 
 
@@ -921,7 +1098,7 @@ body::before {
 @media (min-width: 769px) and (max-width: 1024px) {
 
 
-  
+
 
   .top-header {
     width: 92%;

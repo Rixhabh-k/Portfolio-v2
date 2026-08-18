@@ -1094,9 +1094,692 @@ body::before {
   color: #45413a;
 }
 
+.contact-section {
+  width: 100%;
+  padding: 80px 0;
+}
+
+.contact-wrapper {
+  width: 85%;
+  margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.contact-heading {
+  border-bottom: 3px solid #16140f;
+  padding-bottom: 10px;
+}
+
+.contact-heading-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 5px;
+
+  font-family: "Libre Franklin", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.contact-heading-top p {
+  margin: 0;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #45413a;
+}
+
+.contact-heading h1 {
+  margin: 0;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 400;
+  color: #16140f;
+}
+
+
+/* =========================
+   CONTACT DESK
+========================= */
+
+.contact-desk {
+  display: grid;
+  grid-template-columns: 58% 42%;
+
+  margin-top: 30px;
+
+  border: 1px solid #16140f;
+}
+
+
+/* =========================
+   FORM SIDE
+========================= */
+
+.contact-form-section {
+  padding: 45px 40px 30px;
+  border-right: 1px solid #16140f;
+}
+
+.contact-intro h2 {
+  margin: 0 0 8px;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #373333;
+}
+
+.contact-intro p {
+  max-width: 700px;
+  margin: 0 0 25px;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1rem;
+  line-height: 1.35;
+  color: #45413a;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-field label {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #45413a;
+}
+
+.contact-field input,
+.contact-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #16140f;
+  border-radius: 0;
+
+  background: #fbfaf5;
+
+  padding: 11px;
+
+  outline: none;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1rem;
+  color: #373333;
+}
+
+.contact-field input {
+  height: 40px;
+}
+
+.contact-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: #77736a;
+  opacity: 0.8;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: #a6382c;
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.contact-submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 5px;
+}
+
+.contact-submit-row p {
+  margin: 0;
+
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  color: #77736a;
+}
+
+.contact-submit-row button {
+  border: none;
+
+  background: #16140f;
+  color: #fbfaf5;
+
+  padding: 14px 25px;
+
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+.contact-submit-row button:hover {
+  background: #a6382c;
+}
+
+
+/* =========================
+   INFO SIDE
+========================= */
+
+.contact-info {
+  padding: 28px 25px;
+
+  background: #eeeade;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info-block {
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+
+  border-bottom: 1px solid #c1c0bb;
+}
+
+.contact-info-block > span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: #45413a;
+}
+
+.contact-info-block a,
+.contact-info-block h3 {
+  display: block;
+
+  margin: 0 0 3px;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: #45413a;
+}
+
+.contact-info-block a {
+  text-decoration: none;
+}
+
+.contact-info-block a:hover {
+  color: #a6382c;
+}
+
+.contact-info-block p {
+  max-width: 400px;
+
+  margin: 0;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 0.9rem;
+  line-height: 1.3;
+
+  color: #45413a;
+}
+
+
+/* =========================
+   SOCIALS
+========================= */
+
+.contact-socials {
+  display: flex;
+  gap: 8px;
+
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.contact-socials a {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #16140f;
+
+  text-decoration: none;
+
+  font-family: Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  color: #16140f;
+
+  transition: 0.2s ease;
+}
+
+.contact-socials a:hover {
+  background: #16140f;
+  color: #fbfaf5;
+}
+
+
+.site-footer {
+  width: 100%;
+  background: #16140f;
+  color: #eeeade;
+  padding: 60px 0 28px;
+}
+
+.footer-wrapper {
+  width: 85%;
+  margin: auto;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.footer-title {
+  border-bottom: 1px solid #5b5850;
+  padding-bottom: 20px;
+}
+
+.footer-title h1 {
+  margin: 0;
+  text-align: center;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 4.5rem;
+  line-height: 1;
+
+  font-weight: 400;
+  color: #eeeade;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+
+  gap: 55px;
+
+  padding: 32px 0 40px;
+}
+
+
+/* ABOUT */
+
+.footer-about p {
+  max-width: 310px;
+
+  margin: 0;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1rem;
+  line-height: 1.5;
+
+  color: #c8c4b9;
+}
+
+
+/* COLUMNS */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column span {
+  margin-bottom: 6px;
+
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  color: #96928a;
+}
+
+.footer-column a,
+.footer-column p {
+  margin: 0;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1rem;
+
+  text-decoration: none;
+
+  color: #eeeade;
+
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #a6382c;
+}
+
+
+/* =========================
+   STAMP
+========================= */
+
+.footer-stamp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 5px 0 28px;
+}
+
+.footer-stamp span {
+  display: inline-block;
+
+  padding: 10px 28px;
+
+  border: 3px solid #a6382c;
+
+  color: #a6382c;
+
+  font-family: Consolas, "Andale Mono", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: 3px;
+
+  transform: rotate(-5deg);
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #5b5850;
+
+  padding-top: 20px;
+}
+
+.footer-bottom > p {
+  margin: 0;
+
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  color: #96928a;
+}
+
+
+/* =========================
+   SOCIALS
+========================= */
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #68645c;
+
+  color: #eeeade;
+  text-decoration: none;
+
+  font-family: Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  transition: 0.2s ease;
+}
+
+.footer-socials a:hover {
+  background: #eeeade;
+  color: #16140f;
+}
 
 
 @media (max-width: 768px) {
+
+   .site-footer {
+    padding: 50px 0 20px;
+  }
+
+  .footer-wrapper {
+    width: calc(100% - 40px);
+  }
+
+
+  /* TITLE */
+
+  .footer-title {
+    padding-bottom: 15px;
+  }
+
+  .footer-title h1 {
+    font-size: 2.7rem;
+  }
+
+
+  /* MAIN */
+
+  .footer-main {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px 25px;
+
+    padding: 28px 0 35px;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .footer-about p {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .footer-column a,
+  .footer-column p {
+    font-size: 0.9rem;
+  }
+
+
+  /* STAMP */
+
+  .footer-stamp {
+    padding-bottom: 30px;
+  }
+
+  .footer-stamp span {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+  }
+
+
+  /* BOTTOM */
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-bottom > p {
+    max-width: 100%;
+    line-height: 1.5;
+  }
+
+  .footer-socials a {
+    width: 34px;
+    height: 34px;
+  }
+
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  .contact-wrapper {
+    width: calc(100% - 40px);
+  }
+
+
+  /* HEADER */
+
+  .contact-heading-top {
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .contact-heading-top p {
+    font-size: 0.6rem;
+  }
+
+  .contact-heading-top p:last-child {
+    text-align: right;
+  }
+
+  .contact-heading h1 {
+    font-size: 2.25rem;
+  }
+
+
+  /* DESK */
+
+  .contact-desk {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 20px;
+  }
+
+
+  /* FORM */
+
+  .contact-form-section {
+    padding: 30px 20px;
+
+    border-right: none;
+    border-bottom: 1px solid #16140f;
+  }
+
+  .contact-intro h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact-intro p {
+    font-size: 0.95rem;
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-field input {
+    height: 42px;
+  }
+
+  .contact-field textarea {
+    min-height: 130px;
+  }
+
+  .contact-submit-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-submit-row button {
+    width: 100%;
+  }
+
+
+  /* INFO */
+
+  .contact-info {
+    padding: 25px 20px;
+  }
+
+  .contact-info-block p {
+    font-size: 0.9rem;
+  }
+
+  .contact-socials {
+    margin-top: 5px;
+  }
 
     .career-section {
     padding: 60px 0;
@@ -1522,6 +2205,258 @@ body::before {
     padding: 3px 8px;
   }
 
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  /* ========================================
+     CAREER LEDGER
+  ======================================== */
+
+  .career-section {
+    padding: 65px 0;
+  }
+
+  .career-wrapper {
+    width: 88%;
+  }
+
+  .career-heading-top p {
+    font-size: 0.65rem;
+    letter-spacing: 1.2px;
+  }
+
+  .career-heading h1 {
+    font-size: 2.6rem;
+  }
+
+  .career-list {
+    margin-top: 24px;
+  }
+
+  .career-row {
+    grid-template-columns: 20% 40% 40%;
+    min-height: 105px;
+    padding: 20px 2px;
+  }
+
+  .career-period p {
+    font-size: 0.68rem;
+  }
+
+  .career-role {
+    padding-right: 20px;
+  }
+
+  .career-role h2 {
+    font-size: 1.4rem;
+  }
+
+  .career-role p {
+    font-size: 0.68rem;
+    letter-spacing: 1.2px;
+  }
+
+  .career-description {
+    padding-left: 0;
+  }
+
+  .career-description p {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+
+  /* ========================================
+     CONTACT
+  ======================================== */
+
+  .contact-section {
+    padding: 65px 0;
+  }
+
+  .contact-wrapper {
+    width: 88%;
+  }
+
+  .contact-heading-top p {
+    font-size: 0.65rem;
+  }
+
+  .contact-heading h1 {
+    font-size: 2.6rem;
+  }
+
+  .contact-desk {
+    grid-template-columns: 58% 42%;
+    margin-top: 24px;
+  }
+
+  .contact-form-section {
+    padding: 35px 28px 25px;
+  }
+
+  .contact-intro h2 {
+    font-size: 1.7rem;
+  }
+
+  .contact-intro p {
+    font-size: 0.9rem;
+    margin-bottom: 22px;
+  }
+
+  .contact-form {
+    gap: 13px;
+  }
+
+  .contact-form-row {
+    gap: 10px;
+  }
+
+  .contact-field {
+    gap: 5px;
+  }
+
+  .contact-field label {
+    font-size: 0.58rem;
+  }
+
+  .contact-field input {
+    height: 38px;
+    padding: 9px;
+    font-size: 0.9rem;
+  }
+
+  .contact-field textarea {
+    min-height: 105px;
+    padding: 9px;
+    font-size: 0.9rem;
+  }
+
+  .contact-submit-row p {
+    font-size: 0.55rem;
+  }
+
+  .contact-submit-row button {
+    padding: 12px 20px;
+    font-size: 0.68rem;
+  }
+
+
+  /* CONTACT INFO */
+
+  .contact-info {
+    padding: 24px 20px;
+  }
+
+  .contact-info-block {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  .contact-info-block > span {
+    font-size: 0.55rem;
+  }
+
+  .contact-info-block a,
+  .contact-info-block h3 {
+    font-size: 0.9rem;
+  }
+
+  .contact-info-block p {
+    font-size: 0.8rem;
+  }
+
+  .contact-socials {
+    padding-top: 12px;
+  }
+
+  .contact-socials a {
+    width: 30px;
+    height: 30px;
+    font-size: 0.65rem;
+  }
+
+
+  /* ========================================
+     FOOTER
+  ======================================== */
+
+  .site-footer {
+    padding: 55px 0 25px;
+  }
+
+  .footer-wrapper {
+    width: 88%;
+  }
+
+  .footer-title {
+    padding-bottom: 17px;
+  }
+
+  .footer-title h1 {
+    font-size: 3.5rem;
+  }
+
+  .footer-main {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 30px;
+
+    padding: 28px 0 35px;
+  }
+
+  .footer-about p {
+    max-width: 250px;
+    font-size: 0.88rem;
+    line-height: 1.4;
+  }
+
+  .footer-column {
+    gap: 8px;
+  }
+
+  .footer-column span {
+    font-size: 0.58rem;
+  }
+
+  .footer-column a,
+  .footer-column p {
+    font-size: 0.88rem;
+  }
+
+
+  /* STAMP */
+
+  .footer-stamp {
+    padding-bottom: 25px;
+  }
+
+  .footer-stamp span {
+    padding: 8px 23px;
+    font-size: 0.85rem;
+    letter-spacing: 2.5px;
+  }
+
+
+  /* BOTTOM */
+
+  .footer-bottom {
+    padding-top: 17px;
+  }
+
+  .footer-bottom > p {
+    font-size: 0.58rem;
+  }
+
+  .footer-socials {
+    gap: 8px;
+  }
+
+  .footer-socials a {
+    width: 34px;
+    height: 34px;
+    font-size: 0.65rem;
+  }
 }
 
 

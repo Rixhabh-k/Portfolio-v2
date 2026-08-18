@@ -1,4 +1,6 @@
 import CareerLedger from "../components/CareerLedger"
+import ContactSection from "../components/ContactSection"
+import Footer from "../components/Footer"
 import Forensics from "../components/Forensics"
 import Header from "../components/Header"
 import HeroSection from "../components/HeroSection"
@@ -18,6 +20,8 @@ const MainPage = () => {
       <ProjectsSection/>
       <Forensics/>
       <CareerLedger/>
+      <ContactSection/>
+      <Footer/>
     </div>
   )
 }

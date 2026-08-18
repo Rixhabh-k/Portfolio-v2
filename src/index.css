@@ -32,6 +32,8 @@ body::before {
   mix-blend-mode: multiply;
 }
 
+
+
 .top-header {
   display: flex;
   align-items: center;
@@ -441,8 +443,10 @@ body::before {
 
 .project-section {
   padding-top: 40px;
+  padding-bottom: 20px;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 
 .project-section .ps-top-wrapper {
@@ -664,12 +668,13 @@ body::before {
 .pc-bottom {
   padding-top: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
 
 .casefile-card {
   width: 100%;
+  max-width: none;
   max-width: 31%;
   display: flex;
   flex-direction: column;
@@ -817,9 +822,361 @@ body::before {
 
 /* case card end */
 
+.skills-section {
+  width: 100%;
+  padding: 80px 0;
+}
+
+.skills-top-wrapper {
+  width: 85%;
+  margin: auto;
+}
+
+.skills-p-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-family: "Libre Franklin", sans-serif;
+  letter-spacing: 1px;
+}
+
+.skills-p-line p:nth-child(1) {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.skills-p-line p:nth-child(2) {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #45413a;
+}
+
+.skills-h-line {
+  border-bottom: 3px solid #16140f;
+}
+
+.skills-h-line h1 {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+
+/* LAB REPORT */
+
+.lab-report {
+  width: 85%;
+  margin: 25px auto 0;
+  border: 1px solid #16140f;
+  font-family: "Libre Franklin", sans-serif;
+}
+
+.lab-report-header,
+.lab-report-row {
+  display: grid;
+  grid-template-columns: 42% 18% 18% 22%;
+}
+
+.lab-report-header {
+  background: #16140f;
+  color: #f5f2e9;
+  font-family: Consolas, "Andale Mono", "Lucida Console", monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.lab-report-header>div {
+  padding: 9px 14px;
+}
+
+.lab-report-row {
+  min-height: 46px;
+  border-bottom: 1px solid #c1c0bb;
+}
+
+.lab-report-row:last-child {
+  border-bottom: none;
+}
+
+.lab-report-row>div {
+  display: flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-right: 1px solid #c1c0bb;
+}
+
+.lab-report-row>div:last-child {
+  border-right: none;
+}
+
+.lab-substance {
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1.15rem;
+  color: #373333;
+}
+
+.lab-code,
+.lab-detected {
+  font-family: Consolas, "Andale Mono", "Lucida Console", monospace;
+  font-size: 0.9rem;
+  color: #45413a;
+}
+
+.lab-code {
+  font-weight: 700;
+}
+
+.lab-finding {
+  justify-content: flex-end;
+}
+
+.finding-tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid #45413a;
+  font-family: Consolas, "Andale Mono", "Lucida Console", monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transform: rotate(-1deg);
+}
+
+.finding-tag.primary {
+  color: #a6382c;
+  border-color: #a6382c;
+}
+
+.finding-tag.comfortable {
+  color: #16140f;
+}
+
+.finding-tag.training {
+  color: #16140f;
+}
+
+.finding-tag.trace {
+  color: #16140f;
+}
+
+.career-section {
+  width: 100%;
+  padding: 80px 0 50px 0;
+  border-bottom: 2px solid #16140F;
+}
+
+.career-wrapper {
+  width: 85%;
+  margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.career-heading {
+  border-bottom: 3px solid #16140f;
+  padding-bottom: 12px;
+}
+
+.career-heading-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+
+  font-family: "Libre Franklin", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.career-heading-top p {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #45413a;
+}
+
+.career-heading-top p:last-child {
+  text-align: right;
+}
+
+.career-heading h1 {
+  margin: 0;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 400;
+  color: #16140f;
+}
+
+
+/* =========================
+   CAREER ROWS
+========================= */
+
+.career-list {
+  border-top: 2px solid #16140f;
+  margin-top: 30px;
+}
+
+.career-row {
+  display: grid;
+  grid-template-columns: 18% 45% 37%;
+
+  min-height: 118px;
+
+  padding: 24px 4px;
+
+  border-bottom: 1px solid #c1c0bb;
+}
+
+
+/* PERIOD */
+
+.career-period {
+  padding-left: 4px;
+}
+
+.career-period p {
+  margin: 5px 0 0;
+
+  font-family: Consolas, "Andale Mono", "Lucida Console", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  color: #45413a;
+}
+
+
+/* ROLE */
+
+.career-role {
+  padding-right: 30px;
+}
+
+.career-role h2 {
+  margin: 0 0 5px;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #373333;
+}
+
+.career-role p {
+  margin: 0;
+
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #45413a;
+}
+
+
+/* DESCRIPTION */
+
+.career-description {
+  padding-left: 5px;
+}
+
+.career-description p {
+  margin: 2px 0 0;
+
+  font-family: "Libre Caslon Display", serif;
+  font-size: 1.3rem;
+  line-height: 1.35;
+  color: #45413a;
+}
+
 
 
 @media (max-width: 768px) {
+
+    .career-section {
+    padding: 60px 0;
+  }
+
+  .career-wrapper {
+    width: calc(100% - 40px);
+  }
+
+  .career-heading {
+    padding-bottom: 10px;
+  }
+
+  .career-heading-top {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .career-heading-top p {
+    font-size: 0.65rem;
+  }
+
+  .career-heading-top p:last-child {
+    max-width: 150px;
+  }
+
+  .career-heading h1 {
+    font-size: 2.3rem;
+  }
+
+  .career-list {
+    margin-top: 20px;
+  }
+
+  .career-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+
+    padding: 22px 0;
+  }
+
+  .career-period {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .career-period p {
+    margin: 0;
+    font-size: 0.7rem;
+  }
+
+  .career-role {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    padding: 0;
+  }
+
+  .career-role h2 {
+    font-size: 1.45rem;
+  }
+
+  .career-role p {
+    font-size: 0.65rem;
+  }
+
+  .career-description {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    padding: 0;
+  }
+
+  .career-description p {
+    font-size: 1.15rem;
+    line-height: 1.4;
+  }
+
+  .skills-top-wrapper {
+    width: 90%;
+  }
 
   .navbar .nav-content {
     width: 90%;
@@ -1089,6 +1446,80 @@ body::before {
     max-width: 100%;
     border-bottom: 1px solid #373333;
     padding-bottom: 10px;
+  }
+
+  .skills-p-line p:nth-child(1) {
+    font-size: 11.2px;
+  }
+
+  .skills-p-line p:nth-child(2) {
+    font-size: 11.2px;
+  }
+
+  .skills-h-line h1 {
+
+    font-size: 32px;
+  }
+
+   .lab-report {
+    width: 90%;
+    margin-top: 20px;
+  }
+
+  /* Header hide on mobile */
+  .lab-report-header {
+    display: none;
+  }
+
+  /* Each skill becomes a card */
+  .lab-report-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    min-height: auto;
+    padding: 18px 15px;
+    border-bottom: 1px solid #c1c0bb;
+  }
+
+  .lab-report-row > div {
+    padding: 0;
+    border: none;
+  }
+
+  /* Substance */
+  .lab-substance {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.2rem;
+  }
+
+  /* Code */
+  .lab-code {
+    grid-column: 2;
+    grid-row: 1;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+  }
+
+  /* Detected */
+  .lab-detected {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+
+  /* Finding */
+  .lab-finding {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+
+  .finding-tag {
+    font-size: 0.7rem;
+    padding: 3px 8px;
   }
 
 }

@@ -1,3 +1,5 @@
+import CareerLedger from "../components/CareerLedger"
+import Forensics from "../components/Forensics"
 import Header from "../components/Header"
 import HeroSection from "../components/HeroSection"
 import MiddleHeader from "../components/MiddleHeader"
@@ -14,6 +16,8 @@ const MainPage = () => {
       <NavBar/>
       <HeroSection/>
       <ProjectsSection/>
+      <Forensics/>
+      <CareerLedger/>
     </div>
   )
 }

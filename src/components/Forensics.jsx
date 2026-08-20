@@ -1,44 +1,51 @@
 const Forensics = () => {
   const skills = [
     {
-      substance: "Next.js",
-      code: "NEXT",
+      substance: "React.js",
+      code: "JSX",
       detected: "Most days",
       finding: "PRIMARY TOOL",
       type: "primary",
     },
     {
-      substance: "React / TS",
-      code: "RTS",
+      substance: "JavaScript",
+      code: "JS",
       detected: "Most days",
       finding: "PRIMARY TOOL",
       type: "primary",
     },
     {
-      substance: "Tailwind CSS",
-      code: "TWX",
+      substance: "CSS",
+      code: "CSS",
       detected: "Most days",
       finding: "PRIMARY TOOL",
       type: "primary",
     },
     {
-      substance: "Supabase",
-      code: "SUPA",
+      substance: "Sass",
+      code: "scss",
       detected: "In projects",
       finding: "PRIMARY TOOL",
       type: "primary",
     },
     {
-      substance: "PostgreSQL",
-      code: "PG",
+      substance: "Figma",
+      code: "FIG",
+      detected: "Most days",
+      finding: "PRIMARY TOOL",
+      type: "primary",
+    },
+    {
+      substance: "MongoDb",
+      code: "MD",
       detected: "In projects",
       finding: "COMFORTABLE",
       type: "comfortable",
     },
     {
-      substance: "MySQL",
-      code: "SQL",
-      detected: "When needed",
+      substance: "Express.js",
+      code: "EXP",
+      detected: "In Projects",
       finding: "COMFORTABLE",
       type: "comfortable",
     },
@@ -73,7 +80,7 @@ const Forensics = () => {
   ];
 
   return (
-    <div className="skills-section">
+    <div id="stack" className="skills-section">
       <div className="skills-top-wrapper">
         <div className="skills-p-line">
           <p>Forensics</p>

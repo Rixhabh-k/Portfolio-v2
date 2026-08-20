@@ -1,6 +1,64 @@
+import { useState } from "react";
+
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    story: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setIsSubmitting(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("YOUR_SHEETDB_API_URL", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data: formData,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
+
+      setMessage("Your letter has been sent successfully.");
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        story: "",
+      });
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setMessage("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <section className="contact-section">
+    <section id="contact" className="contact-section">
       <div className="contact-wrapper">
 
         {/* TOP HEADER */}
@@ -12,7 +70,6 @@ const ContactSection = () => {
 
           <h1>Letters & Commissions</h1>
         </div>
-
 
         {/* CONTACT DESK */}
         <div className="contact-desk">
@@ -29,31 +86,40 @@ const ContactSection = () => {
               </p>
             </div>
 
-
-            <form className="contact-form">
+            <form
+              className="contact-form"
+              onSubmit={handleSubmit}
+            >
 
               <div className="contact-form-row">
 
                 <div className="contact-field">
                   <label htmlFor="name">Your Name</label>
+
                   <input
                     id="name"
                     type="text"
                     placeholder="Jane Doe"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
 
                 <div className="contact-field">
                   <label htmlFor="email">Email</label>
+
                   <input
                     id="email"
                     type="email"
                     placeholder="jane@company.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                   />
                 </div>
 
               </div>
-
 
               <div className="contact-field">
                 <label htmlFor="subject">Subject</label>
@@ -62,9 +128,11 @@ const ContactSection = () => {
                   id="subject"
                   type="text"
                   placeholder="A new product, a rebuild, a contract..."
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
                 />
               </div>
-
 
               <div className="contact-field">
                 <label htmlFor="story">The Story</label>
@@ -73,9 +141,11 @@ const ContactSection = () => {
                   id="story"
                   rows="5"
                   placeholder="Tell him what you're building."
+                  value={formData.story}
+                  onChange={handleChange}
+                  required
                 />
               </div>
-
 
               <div className="contact-submit-row">
 
@@ -83,15 +153,23 @@ const ContactSection = () => {
                   Usually replies within 24 hours
                 </p>
 
-                <button type="submit">
-                  Send the Letter
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Sending..." : "Send the Letter"}
                 </button>
 
               </div>
 
+              {message && (
+                <p className="form-message">
+                  {message}
+                </p>
+              )}
+
             </form>
           </div>
-
 
           {/* RIGHT — DETAILS */}
           <aside className="contact-info">
@@ -100,7 +178,7 @@ const ContactSection = () => {
               <span>Direct Line</span>
 
               <a href="mailto:hello@example.com">
-                hello@example.com
+                rixhabhk@gmail.com
               </a>
 
               <p>
@@ -108,7 +186,6 @@ const ContactSection = () => {
                 argument about CSS.
               </p>
             </div>
-
 
             <div className="contact-info-block">
               <span>The Desk</span>
@@ -119,7 +196,6 @@ const ContactSection = () => {
                 IST · Working with teams worldwide, remote-first.
               </p>
             </div>
-
 
             <div className="contact-info-block">
               <span>Availability</span>
@@ -132,19 +208,18 @@ const ContactSection = () => {
               </p>
             </div>
 
-
             {/* SOCIAL LINKS */}
             <div className="contact-socials">
 
-              <a href="#" aria-label="GitHub">
+              <a href="https://github.com/Rixhabh-k" aria-label="GitHub">
                 GH
               </a>
 
-              <a href="#" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/rishabh-kharwar-dev/" aria-label="LinkedIn">
                 in
               </a>
 
-              <a href="#" aria-label="Email">
+              <a href="rixhabhk@gmail.com" aria-label="Email">
                 @
               </a>
 
@@ -153,7 +228,6 @@ const ContactSection = () => {
           </aside>
 
         </div>
-
       </div>
     </section>
   );

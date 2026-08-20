@@ -2,7 +2,16 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-content">
-        <p>SUNDAY 16 AUGUST 2026</p>
+        <p>
+          {new Date()
+            .toLocaleDateString("en-GB", {
+              weekday: "long",
+              day: "2-digit",
+              month: "long",
+              year: "numeric",
+            })
+            .toUpperCase()}
+        </p>
       </div>
 
       <div className="header-content">
@@ -16,10 +25,8 @@ const Header = () => {
       <div className="header-content">
         <p>Price: One Coffee</p>
       </div>
-
-      
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -8,19 +8,19 @@ const NavBar = () => {
   return (
     <div className="navbar">
       <div className="nav-content">
-
         <div className="logo">
           <h1>Rishabh Kharwar</h1>
         </div>
 
         {/* Desktop Navigation */}
         <div className="nav-links">
-          <Link to="/work">Work</Link>
-          <Link to="/stack">Stack</Link>
-          <Link to="/contact">Contact</Link>
-          <Link className="hire-him" to="/contact">
+          <a href="#work">Work</a>
+          <a href="#stack">Stack</a>
+          <a href="#contact">Contact</a>
+
+          <a className="hire-him" href="#contact">
             Hire Him
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -31,7 +31,6 @@ const NavBar = () => {
         >
           {menuOpen ? <GrClose /> : <GrMenu />}
         </button>
-
       </div>
 
       {/* Mobile Navigation */}

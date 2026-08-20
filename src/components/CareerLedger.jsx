@@ -1,25 +1,25 @@
 const CareerLedger = () => {
   const careerData = [
     {
-      period: "Apr 2026 — Now",
-      role: "Founder & Web Developer",
-      company: "Project 43",
+      period: "July 2026 — Now",
+      role: "Frontend Devloper & UI/UX Designer",
+      company: "Tirahut Tech",
       description:
-        "Subject last seen founding a small studio to take on more than standard websites — he looks after the web work while the team handles fuller application builds for clients.",
+        "After successfully completing my internship, I am now working full-time as a UI/UX Associate & Frontend Developer at Tirahut Tech. My role focuses on designing and developing company projects by creating intuitive user experiences and building responsive frontend solutions that balance visual appeal, usability, and business goals.",
     },
     {
-      period: "2023 — Now",
-      role: "Web Developer",
-      company: "Pakko (Brisbane)",
+      period: "Jun 2026 - July 2026 ",
+      role: "Social Media Manager",
+      company: "Radiance Luxury Salon",
       description:
-        "Observed daily, building web applications — the storefront, quoting engine and an interactive 3D design platform — working across both front-end and back-end.",
+        "Managing the brand's social media presence across multiple platforms, creating engaging content, designing promotional creatives, editing short-form videos, planning content calendars, and monitoring audience engagement. Collaborating with the business to enhance brand visibility, attract new clients, and promote academy programs through strategic digital marketing initiatives.",
     },
     {
-      period: "2016 — 2023",
-      role: "Supervisor",
-      company: "Star Seafood, Moorooka",
+      period: "Mar 2026 - Jun 2026 ",
+      role: "Intern",
+      company: "Tirahut Tech",
       description:
-        "First recorded appearance. Ran shifts at the fish & chip shop — leading a team, keeping service tight under pressure, and learning the trade before the code.",
+        "Worked as a Frontend Developer & UI/UX Associate on KamiGami, a real-world fashion e-commerce platform. Designed conversion-focused UI/UX, created pre-development layouts, and built responsive, reusable React components with interactive animations. Collaborated on improving navigation, user experience, accessibility, and overall visual consistency.",
     },
   ];
 

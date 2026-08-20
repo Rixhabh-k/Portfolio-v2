@@ -42,8 +42,8 @@ const Footer = () => {
           <div className="footer-column">
             <span>Wire Services</span>
 
-            <a href="#">GitHub</a>
-            <a href="#">LinkedIn</a>
+            <a href="https://github.com/Rixhabh-k">GitHub</a>
+            <a href="https://www.linkedin.com/in/rishabh-kharwar-dev/">LinkedIn</a>
             <a href="#">Instagram</a>
           </div>
 
@@ -64,11 +64,11 @@ const Footer = () => {
 
           <div className="footer-socials">
 
-            <a href="#" aria-label="GitHub">
+            <a href="https://github.com/Rixhabh-k" aria-label="GitHub">
               GH
             </a>
 
-            <a href="#" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/rishabh-kharwar-dev/" aria-label="LinkedIn">
               in
             </a>
 

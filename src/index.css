@@ -10,9 +10,18 @@ html {
   width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #f1efe7;
   position: relative;
+}
+
+::selection {
+  background-color: #A6382C;
+  color: #FFFFFF;
 }
 
 body::before {
@@ -310,34 +319,36 @@ body::before {
   font-family: "Libre Franklin", sans-serif;
 }
 
-.hero-left .action-btns button:nth-child(1) {
+.hero-left .action-btns a:nth-child(1) {
   border: 2px solid transparent;
   background: #16140F;
   padding: 15px 25px;
   color: #F1EFE7;
   font-size: 1.2rem;
+  text-decoration: none;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.hero-left .action-btns button:nth-child(1):hover {
+.hero-left .action-btns a:nth-child(1):hover {
   background: #F1EFE7;
   color: #16140F;
   border-color: #16140F;
 }
 
 
-.hero-left .action-btns button:nth-child(2) {
+.hero-left .action-btns a:nth-child(2) {
   border: 2px solid #16140F;
   background: #F1EFE7;
   padding: 15px 25px;
   color: #16140F;
+  text-decoration: none;
   font-size: 1.2rem;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.hero-left .action-btns button:nth-child(2):hover {
+.hero-left .action-btns a:nth-child(2):hover {
   background: #16140F;
   color: #F1EFE7;
 }
@@ -668,12 +679,13 @@ body::before {
 .pc-bottom {
   padding-top: 20px;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: space-between;
 }
 
 .casefile-card {
   width: 100%;
+  /* height: ; */
   max-width: none;
   max-width: 31%;
   display: flex;
@@ -736,6 +748,7 @@ body::before {
 
 .casefile-media-frame {
   width: 92%;
+  
   border: 1px solid #373333;
 }
 
@@ -778,6 +791,7 @@ body::before {
   color: #373333;
   margin-bottom: 5px;
   margin-top: 5px;
+  flex-grow: 1;
 }
 
 .casefile-tech-stack {
@@ -801,6 +815,7 @@ body::before {
   justify-content: space-between;
   padding-top: 10px;
   border-top: 1px solid #37333384;
+  margin-top: auto;
 }
 
 .casefile-year {
@@ -1275,7 +1290,7 @@ body::before {
   margin: 0;
 
   font-family: "Libre Franklin", sans-serif;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.7px;
   color: #77736a;
@@ -1331,7 +1346,7 @@ body::before {
   margin-bottom: 7px;
 
   font-family: "Libre Franklin", sans-serif;
-  font-size: 0.6rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1346,7 +1361,7 @@ body::before {
   margin: 0 0 3px;
 
   font-family: "Libre Caslon Display", serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
 
   color: #45413a;
@@ -1366,7 +1381,7 @@ body::before {
   margin: 0;
 
   font-family: "Libre Caslon Display", serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.3;
 
   color: #45413a;
@@ -1398,7 +1413,7 @@ body::before {
   text-decoration: none;
 
   font-family: Consolas, monospace;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
 
   color: #16140f;
@@ -1635,9 +1650,7 @@ body::before {
 
   .footer-main {
     grid-template-columns: 1fr 1fr;
-
     gap: 35px 25px;
-
     padding: 28px 0 35px;
   }
 

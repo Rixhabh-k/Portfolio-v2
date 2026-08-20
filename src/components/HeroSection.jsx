@@ -62,16 +62,15 @@ const HeroSection = () => {
 
           <div className="intro-text">
             <p>
-              Three years in: Robert Tran builds web apps at Pakko, and runs
-              Project 43 — a small studio that takes on full application builds.
+              Rishabh is a developer focused on building thoughtful digital experiences, combining frontend development, UI/UX, and problem-solving with a growing foundation across the modern web stack.
             </p>
           </div>
 
           <div className="small-info">
             <p>
-              By <span>The Investigation Desk ·</span> Reporting from Noida,
-              between Pakko and Project 43
-            </p>
+  By <span>The Investigation Desk ·</span> Reporting from Noida,
+  following the subject's work across design & development
+</p>
           </div>
 
           <div className="action-btns">

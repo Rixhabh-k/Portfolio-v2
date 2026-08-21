@@ -8,8 +8,8 @@ const TopHeader = () => {
       <div className="th-info">
         <h1 class="edition-title">
           <span>THE</span>
-          <span>INVESTIGATION</span>
-          <span>EDITION</span>
+          <span>HINDUSTAN</span>
+          <span>TIMES</span>
         </h1>
       </div>
 

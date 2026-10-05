@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 import KamiGamiImg from "../assets/kamigami.png";
 import AlfaCureImg from "../assets/alfacure.png";
 import WebFigmaImg from "../assets/webFigma.png";
-import BigSparkCoImg from "../assets/bigSparkCo.png";
+
 
 const project = {
   image: KamiGamiImg,
@@ -42,17 +42,7 @@ const caseFiles = [
     projectUrl: "https://figma-lite.vercel.app/",
   },
 
-  {
-    image: BigSparkCoImg,
-    exhibit: "Exhibit D",
-    client: "bigsparkco.rixhabh.in",
-    title: "Big Spark Co",
-    description:
-      "BigSparkCo is a modern IT consultancy website built to present the company’s expertise across cloud architecture, custom software engineering, AI integration, DevOps, digital transformation, and enterprise applications. The project focuses on creating a premium, enterprise-oriented digital experience with structured service sections, selected case studies, a clear methodology, and strong visual hierarchy.",
-    techStack: ["React.js", "CSS", "Gsap"],
-    year: "2026",
-    projectUrl: "https://bigsparkco.rixhabh.in/",
-  },
+  
 ];
 
 const ProjectsSection = () => {

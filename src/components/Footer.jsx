@@ -22,7 +22,7 @@ const Footer = () => {
             <span>Sections</span>
 
             <a href="#work">Selected Works</a>
-            <a href="#skills">The Stack</a>
+            <a href="#stack">The Stack</a>
             <a href="#contact">Contact</a>
           </div>
 
@@ -33,8 +33,8 @@ const Footer = () => {
             <p>India</p>
             <p>IST · Remote-first</p>
 
-            <a href="mailto:your@email.com">
-              your@email.com
+            <a href="mailto:rixhabhk@gmail.com">
+              rixhabhk@gmail.com
             </a>
           </div>
 
@@ -42,9 +42,9 @@ const Footer = () => {
           <div className="footer-column">
             <span>Wire Services</span>
 
-            <a href="https://github.com/Rixhabh-k">GitHub</a>
-            <a href="https://www.linkedin.com/in/rishabh-kharwar-dev/">LinkedIn</a>
-            <a href="#">Instagram</a>
+            <a href="https://github.com/Rixhabh-k" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/rishabh-kharwar-dev/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://instagram.com/rixhabh.json" target="_blank" rel="noreferrer">Instagram</a>
           </div>
 
         </div>
@@ -72,7 +72,7 @@ const Footer = () => {
               in
             </a>
 
-            <a href="#" aria-label="Instagram">
+            <a href="https://instagram.com/rixhabh.json" target="_blank" rel="noreferrer" aria-label="Instagram">
               ◎
             </a>
 

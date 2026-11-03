@@ -9,6 +9,7 @@ const ProjectCard = ({
   techStack,
   year,
   projectUrl,
+  slug,
 }) => {
   return (
     <div className="main-card-wrapper">
@@ -49,7 +50,7 @@ const ProjectCard = ({
           <div className="card-content-open">
             <p>{year}</p>
 
-            <Link to="/work">
+            <Link to={`/work/${slug}`}>
               Open case file
             </Link>
           </div>

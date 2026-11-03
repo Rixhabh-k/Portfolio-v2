@@ -6,7 +6,7 @@ const TopHeader = () => {
       </div>
 
       <div className="th-info">
-        <h1 class="edition-title">
+        <h1 className="edition-title">
           <span>THE</span>
           <span>HINDUSTAN</span>
           <span>TIMES</span>

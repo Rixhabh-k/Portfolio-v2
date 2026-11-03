@@ -177,7 +177,7 @@ const ContactSection = () => {
             <div className="contact-info-block">
               <span>Direct Line</span>
 
-              <a href="mailto:hello@example.com">
+              <a href="mailto:rixhabhk@gmail.com">
                 rixhabhk@gmail.com
               </a>
 
@@ -211,15 +211,15 @@ const ContactSection = () => {
             {/* SOCIAL LINKS */}
             <div className="contact-socials">
 
-              <a href="https://github.com/Rixhabh-k" aria-label="GitHub">
+              <a href="https://github.com/Rixhabh-k" target="_blank" rel="noreferrer" aria-label="GitHub">
                 GH
               </a>
 
-              <a href="https://www.linkedin.com/in/rishabh-kharwar-dev/" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/rishabh-kharwar-dev/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 in
               </a>
 
-              <a href="rixhabhk@gmail.com" aria-label="Email">
+              <a href="mailto:rixhabhk@gmail.com" aria-label="Email">
                 @
               </a>
 

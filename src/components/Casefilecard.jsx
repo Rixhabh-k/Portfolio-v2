@@ -8,7 +8,7 @@ const CaseFileCard = ({
   description,
   techStack,
   year,
-  projectUrl,
+  slug,
 }) => {
   return (
     <div className="casefile-card">
@@ -51,14 +51,9 @@ const CaseFileCard = ({
       <div className="casefile-footer">
         <p className="casefile-year">{year}</p>
 
-        <a
-          className="casefile-open-link"
-          href={projectUrl}
-          target="_blank"
-          rel="noreferrer"
-        >
+        <Link className="casefile-open-link" to={`/work/${slug}`}>
           Open case file
-        </a>
+        </Link>
       </div>
     </div>
   );

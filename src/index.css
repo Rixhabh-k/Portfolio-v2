@@ -558,17 +558,21 @@ body::before {
   z-index: 1;
 }
 
+.card-main-container {
+  justify-content: center;
+  gap: 8px;
+}
+
 .card-main-container .card-img-container {
-  margin-top: 10px;
   border: 1px solid #373333;
   width: 95%;
-  height: 90%;
+  height: auto;
 }
 
 .card-main-container .card-img-container img {
-  height: 100%;
+  display: block;
+  height: auto;
   width: 100%;
-  object-fit: cover;
   filter: grayscale(100%);
 }
 
@@ -755,8 +759,7 @@ body::before {
 .casefile-media-frame img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   filter: grayscale(100%);
 }
 
@@ -2103,13 +2106,11 @@ body::before {
   .card-main-container .card-img-container {
     width: 95%;
     height: auto;
-    aspect-ratio: 16 / 9;
   }
 
   .card-main-container .card-img-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
   }
 
   .main-card-wrapper:hover {
@@ -2599,7 +2600,6 @@ body::before {
   .card-main-container .card-img-container {
     width: 95%;
     height: auto;
-    aspect-ratio: 16 / 9;
   }
 
   .main-card-wrapper .card-content {
@@ -2608,8 +2608,7 @@ body::before {
 
   .card-main-container .card-img-container img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
   }
 
   .main-card-wrapper .card-content .card-content-top {

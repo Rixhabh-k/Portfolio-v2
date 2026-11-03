@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { GrMenu, GrClose } from "react-icons/gr";
 
 const NavBar = () => {
@@ -35,25 +34,25 @@ const NavBar = () => {
 
       {/* Mobile Navigation */}
       <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <Link to="/work" onClick={() => setMenuOpen(false)}>
+        <a href="#work" onClick={() => setMenuOpen(false)}>
           Work
-        </Link>
+        </a>
 
-        <Link to="/stack" onClick={() => setMenuOpen(false)}>
+        <a href="#stack" onClick={() => setMenuOpen(false)}>
           Stack
-        </Link>
+        </a>
 
-        <Link to="/contact" onClick={() => setMenuOpen(false)}>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>
           Contact
-        </Link>
+        </a>
 
-        <Link
+        <a
           className="hire-him"
-          to="/contact"
+          href="#contact"
           onClick={() => setMenuOpen(false)}
         >
           Hire Him
-        </Link>
+        </a>
       </div>
     </div>
   );

@@ -360,9 +360,7 @@ body::before {
   border-top: 2px solid #16140F;
   border-bottom: 2px solid #16140F;
   margin-top: 20px;
-
-
-
+  margin-bottom: 24px;
 }
 
 .hero-left .hero-stats .stats {

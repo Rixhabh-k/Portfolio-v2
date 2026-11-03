@@ -8,10 +8,12 @@ import MiddleHeader from "../components/MiddleHeader"
 import NavBar from "../components/NavBar"
 import ProjectsSection from "../components/ProjectsSection"
 import TopHeader from "../components/TopHeader"
+import WantedIntro from "../components/WantedIntro"
 
 const MainPage = () => {
   return (
     <div id="main">
+      <WantedIntro/>
       <TopHeader/>
       <MiddleHeader/>
       <Header/>

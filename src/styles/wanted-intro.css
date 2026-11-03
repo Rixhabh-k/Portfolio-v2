@@ -9,6 +9,9 @@
   --y: 50vh;
   --r: 84px;
   --hole: 84px;
+  --zoom: 1.12;
+  --w: 100vw;
+  --h: 100vh;
 
   position: fixed;
   inset: 0;
@@ -16,6 +19,10 @@
   overflow: hidden;
   cursor: none;
   user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
   background: #c9c4b8;
 }
 
@@ -39,6 +46,11 @@
   gap: 34px;
   padding: 8px 56px;
   background: #cdc8bc;
+}
+
+/* the blurred paper never changes: keep it on its own layer so it is painted once */
+.wi-layer-blur {
+  will-change: transform;
 }
 
 .wi-layer-blur .wi-paper {
@@ -114,34 +126,61 @@
   background: #16140F;
 }
 
-/* soft light following the glass */
-.wi-spot {
+/* static vignette */
+.wi-vignette {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(circle 300px at var(--x) var(--y), rgba(255, 253, 245, 0.42), transparent 70%),
-    radial-gradient(ellipse at center, transparent 45%, rgba(22, 20, 15, 0.28) 100%);
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(22, 20, 15, 0.28) 100%);
+}
+
+/* soft light following the glass — a fixed-size disc moved by transform, never repainted */
+.wi-spot {
+  position: absolute;
+  top: -300px;
+  left: -300px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 253, 245, 0.42), transparent 70%);
+  transform: translate(var(--x), var(--y));
+  will-change: transform;
 }
 
 /* ---------- lens ---------- */
 
-.wi-lens-view {
-  clip-path: circle(calc(var(--r) - 7px) at var(--x) var(--y));
-}
-
-.wi-zoom {
+/* the lens window inside the ring */
+.wi-lens {
   position: absolute;
   inset: 0;
-  transform: scale(1.12);
-  transform-origin: var(--x) var(--y);
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.wi-lens-view .wi-paper {
+/* full-size sharp paper, scaled and shifted so the point under the lens centre lines up.
+   8px = ring border width */
+.wi-lens-paper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--w);
+  height: var(--h);
+  transform-origin: 0 0;
+  transform:
+    translate(
+      calc(var(--r) - 8px - var(--x) * var(--zoom)),
+      calc(var(--r) - 8px - var(--y) * var(--zoom))
+    )
+    scale(var(--zoom));
+  will-change: transform;
+}
+
+.wi-lens .wi-paper {
   background: #e6e2d7;
 }
 
-.wi-lens-view .wi-notice {
+.wi-lens .wi-notice {
   background: #e6e2d7;
   box-shadow: 0 0 0 22px #e6e2d7;
 }
@@ -155,6 +194,7 @@
   transform: translate(calc(var(--x) - var(--r)), calc(var(--y) - var(--r)));
   pointer-events: none;
   z-index: 2;
+  will-change: transform;
 }
 
 .wi-glass-body {
@@ -175,6 +215,7 @@
 .wi-glass-body::after {
   content: "";
   position: absolute;
+  z-index: 1;
   inset: 8%;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.5), transparent 40%);
@@ -401,7 +442,7 @@
   }
 
   .wi-notice h2 {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
   }
 
   .wi-notice p {

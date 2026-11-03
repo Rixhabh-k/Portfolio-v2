@@ -24,11 +24,18 @@ const AUTO_PATH = [
   { x: 0.5, y: 0.5 },
 ];
 const AUTO_SEGMENT_MS = 1100;
-const IDLE_BEFORE_AUTO_MS = 7000;
+// if nobody steers the glass, it starts searching on its own
+const IDLE_BEFORE_AUTO_MS = { mouse: 7000, touch: 4000 };
 const STAMP_HOLD_MS = 1700;
 const REVEAL_MS = 950;
 
 const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+// any phone/tablet, including Android browsers that don't report `hover: none`
+const isTouchDevice = () =>
+  window.matchMedia("(hover: none), (pointer: coarse)").matches || navigator.maxTouchPoints > 0;
+
+const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
 const shouldShowIntro = () => {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
@@ -75,6 +82,7 @@ const Paper = () => (
 
 const WantedIntro = () => {
   const [visible, setVisible] = useState(shouldShowIntro);
+  const [isTouch] = useState(isTouchDevice);
   const [phase, setPhase] = useState("search"); // search → stamp → reveal
   const rootRef = useRef(null);
   const revealRef = useRef(null);
@@ -83,15 +91,19 @@ const WantedIntro = () => {
     if (!visible) return;
 
     const root = rootRef.current;
-    const isTouch = window.matchMedia("(hover: none)").matches;
-    const radius = window.innerWidth < 600 ? 74 : 84;
+    const small = root.clientWidth < 600;
+    const radius = small ? 80 : 84;
 
-    const pos = { x: window.innerWidth * 0.18, y: window.innerHeight * 0.38 };
+    // measure the intro itself: on phones window.innerHeight differs from the fixed layer while the URL bar shows
+    const size = { w: root.clientWidth, h: root.clientHeight };
+
+    const pos = { x: size.w * 0.18, y: size.h * 0.38 };
     const target = { ...pos };
 
     let currentPhase = "search";
     let locked = false;
-    let auto = isTouch;
+    let auto = false;
+    let dragFrom = null; // last finger position while dragging
     let autoStart = performance.now();
     let autoFrom = { ...pos };
     let revealStart = 0;
@@ -109,15 +121,16 @@ const WantedIntro = () => {
 
     const resetIdle = () => {
       clearTimeout(idleTimer);
-      idleTimer = setTimeout(startAuto, IDLE_BEFORE_AUTO_MS);
+      idleTimer = setTimeout(startAuto, IDLE_BEFORE_AUTO_MS[isTouch ? "touch" : "mouse"]);
     };
 
     const autoTarget = (now) => {
       const points = [
         autoFrom,
-        ...AUTO_PATH.map((p) => ({ x: p.x * window.innerWidth, y: p.y * window.innerHeight })),
+        ...AUTO_PATH.map((p) => ({ x: p.x * size.w, y: p.y * size.h })),
       ];
-      const elapsed = (now - autoStart) / AUTO_SEGMENT_MS;
+      // rAF timestamps can be a hair older than performance.now(): never go below 0
+      const elapsed = Math.max(0, (now - autoStart) / AUTO_SEGMENT_MS);
       const segment = Math.min(Math.floor(elapsed), points.length - 2);
       const t = Math.min(ease(elapsed - segment), 1);
       const from = points[segment];
@@ -146,12 +159,12 @@ const WantedIntro = () => {
     };
 
     const tick = (now) => {
-      const cx = window.innerWidth / 2;
-      const cy = window.innerHeight / 2;
+      const cx = size.w / 2;
+      const cy = size.h / 2;
 
       if (currentPhase === "reveal") {
-        const t = Math.min((now - revealStart) / REVEAL_MS, 1);
-        const maxRadius = Math.hypot(window.innerWidth, window.innerHeight);
+        const t = clamp((now - revealStart) / REVEAL_MS, 0, 1);
+        const maxRadius = Math.hypot(size.w, size.h);
 
         setVar("--hole", `${radius + ease(t) * maxRadius}px`);
 
@@ -169,7 +182,7 @@ const WantedIntro = () => {
           if (Math.hypot(pos.x - cx, pos.y - cy) < radius * 0.75) locked = true;
         }
 
-        const smoothing = locked ? 0.12 : 0.2;
+        const smoothing = locked ? 0.12 : dragFrom ? 0.35 : 0.2;
         pos.x += (target.x - pos.x) * smoothing;
         pos.y += (target.y - pos.y) * smoothing;
 
@@ -186,17 +199,52 @@ const WantedIntro = () => {
       raf = requestAnimationFrame(tick);
     };
 
-    const handleMove = (e) => {
-      if (isTouch || locked) return;
+    // mouse: the glass follows the cursor
+    // finger: drag anywhere on the screen and the glass moves by the same amount,
+    // so the finger never covers the lens
+    const handleDown = (e) => {
+      if (locked || e.pointerType === "mouse" || e.target.closest(".wi-skip")) return;
 
       auto = false;
-      target.x = e.clientX;
-      target.y = e.clientY;
-      resetIdle();
+      clearTimeout(idleTimer);
+      dragFrom = { x: e.clientX, y: e.clientY };
+      target.x = pos.x;
+      target.y = pos.y;
+    };
+
+    const handleMove = (e) => {
+      if (locked) return;
+
+      if (e.pointerType === "mouse") {
+        auto = false;
+        target.x = e.clientX;
+        target.y = e.clientY;
+        resetIdle();
+      } else if (dragFrom) {
+        target.x = clamp(target.x + e.clientX - dragFrom.x, 0, size.w);
+        target.y = clamp(target.y + e.clientY - dragFrom.y, 0, size.h);
+        dragFrom = { x: e.clientX, y: e.clientY };
+      }
+    };
+
+    const handleUp = () => {
+      if (!dragFrom) return;
+
+      dragFrom = null;
+      if (!locked) resetIdle();
+    };
+
+    const handleResize = () => {
+      size.w = root.clientWidth;
+      size.h = root.clientHeight;
+      setVar("--w", `${size.w}px`);
+      setVar("--h", `${size.h}px`);
     };
 
     revealRef.current = beginReveal;
+    handleResize();
     setVar("--r", `${radius}px`);
+    setVar("--zoom", small ? "1" : "1.12");
     setVar("--hole", `${radius}px`);
     setVar("--x", `${pos.x}px`);
     setVar("--y", `${pos.y}px`);
@@ -204,18 +252,26 @@ const WantedIntro = () => {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    root.addEventListener("pointerdown", handleDown);
     window.addEventListener("pointermove", handleMove);
-    if (!isTouch) resetIdle();
+    window.addEventListener("pointerup", handleUp);
+    window.addEventListener("pointercancel", handleUp);
+    window.addEventListener("resize", handleResize);
+    resetIdle();
     raf = requestAnimationFrame(tick);
 
     return () => {
       cancelAnimationFrame(raf);
       clearTimeout(idleTimer);
       clearTimeout(stampTimer);
+      root.removeEventListener("pointerdown", handleDown);
       window.removeEventListener("pointermove", handleMove);
+      window.removeEventListener("pointerup", handleUp);
+      window.removeEventListener("pointercancel", handleUp);
+      window.removeEventListener("resize", handleResize);
       document.body.style.overflow = previousOverflow;
     };
-  }, [visible]);
+  }, [visible, isTouch]);
 
   if (!visible) return null;
 
@@ -226,17 +282,19 @@ const WantedIntro = () => {
         <Paper />
       </div>
 
+      <div className="wi-vignette" />
       <div className="wi-spot" />
 
-      {/* sharp, slightly magnified paper — only visible through the lens */}
-      <div className="wi-layer wi-lens-view">
-        <div className="wi-zoom">
-          <Paper />
-        </div>
-      </div>
-
+      {/* the glass carries a sharp, magnified copy of the paper, counter-moved so it lines up.
+          Everything moves with transforms only, so it stays smooth on phones. */}
       <div className="wi-glass">
-        <div className="wi-glass-body" />
+        <div className="wi-glass-body">
+          <div className="wi-lens">
+            <div className="wi-lens-paper">
+              <Paper />
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* the poster that pops once the subject is found */}
@@ -262,7 +320,9 @@ const WantedIntro = () => {
         </div>
       )}
 
-      <p className="wi-hint">Take the glass — find the subject</p>
+      <p className="wi-hint">
+        {isTouch ? "Drag the glass — find the subject" : "Take the glass — find the subject"}
+      </p>
 
       <button type="button" className="wi-skip" onClick={() => revealRef.current?.()}>
         Skip intro →
